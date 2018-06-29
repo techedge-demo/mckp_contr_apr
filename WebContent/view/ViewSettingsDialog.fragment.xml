@@ -1,0 +1,23 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+
+	
+	<Dialog 
+    	id="idMessageDialog"
+    	title="Rechazar"
+    	afterClose="handleAfterCloseDialog">
+	    <content>
+	    	<VBox>
+				<TextArea placeholder="Indique el motivo del rechazo" growing="true" growingMaxLines="7" width="100%"/>		
+	    	</VBox>
+	    </content>
+	    
+	    <beginButton>
+        	<Button text="Rechazar" press="" />
+	    </beginButton>
+	    <endButton>
+        	<Button text="Cancelar" press="closeDialogRechazar" />
+	    </endButton>
+    </Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,768 @@
+<mvc:View
+	controllerName="sap.ui.demo.masterdetail.controller.Detail"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:f="sap.ui.layout.form" 
+	xmlns:l="sap.ui.layout"
+	xmlns:semantic="sap.m.semantic">
+
+	<semantic:DetailPage
+		id="page"
+		navButtonPress="onNavBack"
+		showNavButton="{device>/system/phone}"
+		title="{i18n>detailTitle}"
+		busy="{detailView>/busy}"
+		busyIndicatorDelay="{detailView>/delay}">
+
+		<semantic:content>
+			<ObjectHeader
+				title="{Type}"
+				number="{ObjectID}"
+				numberUnit="{Date}">
+
+				<attributes>
+					<ObjectAttribute text="{Position}" />
+					<ObjectAttribute text="{Applicant}" />
+				</attributes>
+				
+				<firstStatus>
+					<ObjectStatus
+						text="{Status}"/>
+				</firstStatus>		
+			</ObjectHeader>
+			<IconTabBar
+				id="iconTabBar"
+				class="sapUiResponsiveContentPadding">
+				<items>
+					<IconTabFilter
+						id="iconTabBarFilter1"
+						icon="sap-icon://request"
+						visible="{ReqData}"
+						tooltip="{i18n>detailIconTabBarInfo1}">
+						<f:SimpleForm 
+							id="formTabBarFilter1" 
+							width="auto" 
+							layout="ResponsiveGridLayout" 
+							editable="true">
+							<f:content>
+								<Label text="{i18n>type}" width="100%" required="false">	 
+									<layoutData>
+										<l:GridData span="L4 M4 S12"/>
+									</layoutData>
+								</Label>
+								<Input 
+					            	id="idInputType" 
+					            	type="Text" 
+				            		editable="false">
+									<layoutData>
+										<l:GridData span="L4 M4 S12" linebreakL="false" linebreakM="false"/>
+									</layoutData>
+					            </Input>   
+					              
+					           	<Label text="{i18n>position}" width="100%" required="false">	
+									<layoutData>
+										<l:GridData span="L4 M4 S12" linebreakL="true" linebreakM="true"/>
+									</layoutData>
+								</Label>								
+								<Input 
+					            	id="idInputPosition"  
+				            		editable="false">
+									<layoutData>
+										<l:GridData span="L4 M4 S12" linebreakL="false" linebreakM="false"/>
+									</layoutData>
+					            </Input>   	
+					            				            
+					           	<Label text="{i18n>society}" width="100%" required="false">	
+									<layoutData>
+										<l:GridData span="L4 M4 S12" linebreakL="true" linebreakM="true"/>	
+									</layoutData>
+								</Label>	
+								<Input 
+					            	id="idInputSociety" 
+				            		editable="false">
+									<layoutData>
+										<l:GridData span="L4 M4 S12" linebreakL="false" linebreakM="false"/>
+									</layoutData>
+					            </Input>     
+					            
+       				           	<Label text="{i18n>corporatedivision}" width="100%" required="false">	 
+									<layoutData>
+										<l:GridData span="L4 M4 S12" linebreakL="true" linebreakM="true"/>
+									</layoutData>
+								</Label>								
+								<Input 
+					            	id="idInputCorporatedivision"  
+				            		editable="false">
+									<layoutData>
+										<l:GridData span="L4 M4 S12" linebreakL="false" linebreakM="false"/>
+									</layoutData>
+					            </Input>  
+					            
+       				           	<Label text="{i18n>workplace}" width="100%" required="false">	 
+									<layoutData>
+										<l:GridData span="L4 M4 S12" linebreakL="true" linebreakM="true"/>
+									</layoutData>
+								</Label>								
+								<Input 
+					            	id="idInputWorkplace"  
+				            		editable="false">
+									<layoutData>
+										<l:GridData span="L4 M4 S12" linebreakL="false" linebreakM="false"/>
+									</layoutData>
+					            </Input>  
+	           				</f:content>
+						</f:SimpleForm>
+					</IconTabFilter>
+					<IconTabFilter
+						id="iconTabBarFilter2"
+						icon="sap-icon://eam-work-order"
+						visible="{WorkPosition}"
+						tooltip="{i18n>detailIconTabBarInfo2}">
+						
+						<f:SimpleForm 
+							id="formTabBarFilter2" 
+							width="auto" 
+							layout="ResponsiveGridLayout" 
+							editable="true">
+							<f:content>
+								<Label text="{i18n>reasonincorporation}" width="100%" required="false">	 
+									<layoutData>
+										<l:GridData span="L3 M3 S12"/>
+									</layoutData>
+								</Label>
+								<Input 
+					            	id="idInputReasonincorporation" 
+					            	type="Text" 
+				            		editable="false">
+									<layoutData>
+										<l:GridData span="L3 M3 S12"/>
+									</layoutData>
+					            </Input>     
+					            
+					           	<Label text="{i18n>Typeofcontract}" width="100%" required="false">	 
+									<layoutData>
+										<l:GridData span="L3 M3 S12" linebreakL="false" linebreakM="false"/>
+									</layoutData>
+								</Label>								
+								<Input 
+					            	id="idInputTypeofcontract"  
+	            					editable="false">														
+	            					<layoutData>
+										<l:GridData span="L3 M3 S12" linebreakL="false" linebreakM="false"/>
+									</layoutData>
+					            </Input>   				
+					            	            
+					           	<Label text="{i18n>incorporationexpecteddate}" width="100%" required="false">	 
+									<layoutData>	
+										<l:GridData span="L3 M3 S12" linebreakL="false" linebreakM="false"/>
+									</layoutData>
+								</Label>	
+								<Input 
+					            	id="idInputIncorporationexpecteddate" 
+				            		editable="false">
+            						<layoutData>	
+										<l:GridData span="L3 M3 S12" linebreakL="false" linebreakM="false"/>
+									</layoutData>
+					            </Input>     
+					            
+       				           	<Label text="{i18n>justification}" width="100%" required="false">	 
+									<layoutData>
+										<l:GridData span="L3 M3 S12" linebreakL="false" linebreakM="false"/>
+									</layoutData>
+								</Label>								
+								<Input 
+					            	id="idInputjustification"  
+				            		editable="false">	 
+									<layoutData>
+										<l:GridData span="L3 M3 S12" linebreakL="false" linebreakM="false"/>
+									</layoutData>
+					            </Input>  
+					            
+       				           	<Label text="{i18n>collectiveagreement}" width="100%" required="false">	 
+									<layoutData>
+										<l:GridData span="L3 M3 S12" linebreakL="false" linebreakM="false"/>
+									</layoutData>
+								</Label>								
+								<Input 
+					            	id="idInputCollectiveagreement"  
+				            		editable="false">
+            						<layoutData>
+										<l:GridData span="L3 M3 S12" linebreakL="false" linebreakM="false"/>
+									</layoutData>
+					            </Input>  
+					            
+       				           	<Label text="{i18n>durationproposal}" width="100%" required="false">	 
+									<layoutData>
+										<l:GridData span="L3 M3 S12" linebreakL="false" linebreakM="false"/>
+									</layoutData>
+								</Label>								
+								<Input 
+					            	id="idInputDurationproposal"  
+				            		editable="false">
+            						<layoutData>
+										<l:GridData span="L2 M2 S12" linebreakL="false" linebreakM="false"/>
+									</layoutData>
+					            </Input>  							
+								<Input 
+					            	id="idInputDurationproposal2"  
+				            		editable="false">
+            						<layoutData>
+										<l:GridData span="L1 M1 S12" linebreakL="false" linebreakM="false"/>
+									</layoutData>
+					            </Input>  
+					            
+       				           	<Label text="{i18n>professionalgroup}" width="100%" required="false">	 
+									<layoutData>
+										<l:GridData span="L3 M3 S12" linebreakL="false" linebreakM="false"/>
+									</layoutData>
+								</Label>								
+								<Input 
+					            	id="idInputProfessionalgroup"  
+				            		editable="false">
+            						<layoutData>
+										<l:GridData span="L3 M3 S12" linebreakL="false" linebreakM="false"/>
+									</layoutData>
+					            </Input>  
+					            
+       				           	<Label text="{i18n>proposedsalaryband}" width="100%" required="false">	 
+									<layoutData>
+										<l:GridData span="L3 M3 S12" linebreakL="false" linebreakM="false"/>
+									</layoutData>
+								</Label>								
+								<Input 
+					            	id="idInputProposedsalaryband"  
+				            		editable="false">
+            						<layoutData>
+										<l:GridData span="L2 M2 S12" linebreakL="false" linebreakM="false"/>
+									</layoutData>
+					            </Input>  							
+								<Input 
+					            	id="idInputProposedsalaryband2"  
+				            		editable="false">
+            						<layoutData>
+										<l:GridData span="L1 M1 S12" linebreakL="false" linebreakM="false"/>
+									</layoutData>
+					            </Input>  
+					            
+       				           	<Label text="{i18n>job}" width="100%" required="false">	 
+									<layoutData>
+										<l:GridData span="L3 M3 S12" linebreakL="false" linebreakM="false"/>
+									</layoutData>
+								</Label>								
+								<Input 
+					            	id="idInputJob"  
+				            		editable="false">
+            						<layoutData>
+										<l:GridData span="L3 M3 S12" linebreakL="false" linebreakM="false"/>
+									</layoutData>
+					            </Input>  
+					            
+       				           	<Label text="{i18n>variablesalaryband}" width="100%" required="false">	 
+									<layoutData>
+										<l:GridData span="L3 M3 S12" linebreakL="false" linebreakM="false"/>
+									</layoutData>
+								</Label>								
+								<Input 
+					            	id="idInputVariablesalaryband"  
+				            		editable="false">
+            						<layoutData>
+										<l:GridData span="L2 M2 S12" linebreakL="false" linebreakM="false"/>
+									</layoutData>
+					            </Input>  							
+								<Input 
+					            	id="idInputVariablesalaryband2"  
+				            		editable="false">
+            						<layoutData>
+										<l:GridData span="L1 M1 S12" linebreakL="false" linebreakM="false"/>
+									</layoutData>
+					            </Input>  
+					            
+       				           	<Label text="{i18n>level}" width="100%" required="false">	 
+									<layoutData>
+										<l:GridData span="L3 M3 S12" linebreakL="false" linebreakM="false"/>
+									</layoutData>
+								</Label>								
+								<Input 
+					            	id="idInputLevel"  
+				            		editable="false">
+            						<layoutData>
+										<l:GridData span="L3 M3 S12" linebreakL="false" linebreakM="false"/>
+									</layoutData>
+					            </Input>  
+					            
+       				           	<Label text="{i18n>activityclass}" width="100%" required="false">	 
+									<layoutData>
+										<l:GridData span="L3 M3 S12" linebreakL="false" linebreakM="false"/>
+									</layoutData>
+								</Label>								
+								<Input 
+					            	id="idInputActivityclass"  
+				            		editable="false">
+            						<layoutData>
+										<l:GridData span="L2 M2 S12" linebreakL="false" linebreakM="false"/>
+									</layoutData>
+					            </Input>  							
+								<Input 
+					            	id="idInputActivityclass2"  
+				            		editable="false">
+            						<layoutData>
+										<l:GridData span="L1 M1 S12" linebreakL="false" linebreakM="false"/>
+									</layoutData>
+					            </Input>  
+					            
+       				           	<Label text="{i18n>salary}" width="100%" required="false">	 
+									<layoutData>
+										<l:GridData span="L3 M3 S12" linebreakL="false" linebreakM="false"/>
+									</layoutData>
+								</Label>								
+								<Input 
+					            	id="idInputSalary"  
+				            		editable="false">
+            						<layoutData>
+										<l:GridData span="L3 M3 S12" linebreakL="false" linebreakM="false"/>
+									</layoutData>
+					            </Input>  	
+					            
+       				           	<Label text="{i18n>financialassistance}" width="100%" required="false">	 
+									<layoutData>
+										<l:GridData span="L3 M3 S12" linebreakL="false" linebreakM="false"/>
+									</layoutData>
+								</Label>						            
+					            <CheckBox text="" selected="true" editable="false">
+            						<layoutData>
+										<l:GridData span="L3 M3 S12" linebreakL="false" linebreakM="false"/>
+									</layoutData>
+								</CheckBox>
+					            
+	           				</f:content>
+						</f:SimpleForm>
+						
+					</IconTabFilter>
+					<IconTabFilter
+						id="iconTabBarFilter3"
+						icon="sap-icon://multi-select"
+						visible="{SelectData}"
+						tooltip="{i18n>detailIconTabBarInfo3}">
+						<f:SimpleForm 
+							id="formTabBarFilter3" 
+							width="auto" 
+							layout="ResponsiveGridLayout" 
+							editable="true">
+							<f:content>
+								<Label text="{i18n>trainingrequired}" width="100%" required="false">	 
+									<layoutData>
+										<l:GridData span="L3 M3 S12"/>
+									</layoutData>
+								</Label>
+								<Input 
+					            	id="idInputTrainingrequired" 
+					            	type="Text" 
+				            		editable="false">
+									<layoutData>
+										<l:GridData span="L3 M3 S12"/>
+									</layoutData>
+					            </Input>     
+					            
+					           	<Label text="{i18n>initdate}" width="100%" required="false">	 
+									<layoutData>
+										<l:GridData span="L3 M3 S12" linebreakL="false" linebreakM="false"/>
+									</layoutData>
+								</Label>								
+								<Input 
+					            	id="idInputInitdate"  
+	            					editable="false">														
+	            					<layoutData>
+										<l:GridData span="L3 M3 S12" linebreakL="false" linebreakM="false"/>
+									</layoutData>
+					            </Input>   				
+					            
+					            
+					            <Label text="{i18n>academicdegree}" width="100%" required="false">	 
+									<layoutData>
+										<l:GridData span="L3 M3 S12"/>
+									</layoutData>
+								</Label>
+								<Input 
+					            	id="idInputAcademicdegree" 
+					            	type="Text" 
+				            		editable="false">
+									<layoutData>
+										<l:GridData span="L3 M3 S12"/>
+									</layoutData>
+					            </Input>     
+					            
+					           	<Label text="{i18n>enddate}" width="100%" required="false">	 
+									<layoutData>
+										<l:GridData span="L3 M3 S12" linebreakL="false" linebreakM="false"/>
+									</layoutData>
+								</Label>								
+								<Input 
+					            	id="idInputEnddate"  
+	            					editable="false">														
+	            					<layoutData>
+										<l:GridData span="L3 M3 S12" linebreakL="false" linebreakM="false"/>
+									</layoutData>
+					            </Input>   				
+					            
+					            
+					            <Label text="{i18n>speciality}" width="100%" required="false">	 
+									<layoutData>
+										<l:GridData span="L3 M3 S12"/>
+									</layoutData>
+								</Label>
+								<Input 
+					            	id="idInputSpecialty" 
+					            	type="Text" 
+				            		editable="false">
+									<layoutData>
+										<l:GridData span="L3 M3 S12"/>
+									</layoutData>
+					            </Input>     
+					            
+					           	<Label text="{i18n>registrationconfirmation}" width="100%" required="false">	 
+									<layoutData>
+										<l:GridData span="L3 M3 S12" linebreakL="false" linebreakM="false"/>
+									</layoutData>
+								</Label>								
+					            <CheckBox text="" selected="true" editable="false">
+            						<layoutData>
+										<l:GridData span="L3 M3 S12" linebreakL="false" linebreakM="false"/>
+									</layoutData>
+								</CheckBox> 			
+					            
+					            
+					            <Label text="{i18n>functions}" width="100%" required="false">	 
+									<layoutData>
+										<l:GridData span="L3 M3 S12"/>
+									</layoutData>
+								</Label>
+								<Input 
+					            	id="idInputFunctions" 
+					            	type="Text" 
+				            		editable="false">
+									<layoutData>
+										<l:GridData span="L3 M3 S12"/>
+									</layoutData>
+					            </Input>     
+					            
+					           	<Label text="{i18n>educationalentity}" width="100%" required="false">	 
+									<layoutData>
+										<l:GridData span="L3 M3 S12" linebreakL="false" linebreakM="false"/>
+									</layoutData>
+								</Label>								
+								<Input 
+					            	id="idInputEducationalentity"  
+	            					editable="false">														
+	            					<layoutData>
+										<l:GridData span="L3 M3 S12" linebreakL="false" linebreakM="false"/>
+									</layoutData>
+					            </Input>   		
+					            
+					            
+					            <Label text="{i18n>experiencerequired}" width="100%" required="false">	 
+									<layoutData>
+										<l:GridData span="L3 M3 S12"/>
+									</layoutData>
+								</Label>
+								<Input 
+					            	id="idInputExperiencerequired" 
+					            	type="Text" 
+				            		editable="false">
+									<layoutData>
+										<l:GridData span="L3 M3 S12"/>
+									</layoutData>
+					            </Input>     
+					            
+					           	<Label text="{i18n>scholarshippayer}" width="100%" required="false">	 
+									<layoutData>
+										<l:GridData span="L3 M3 S12" linebreakL="false" linebreakM="false"/>
+									</layoutData>
+								</Label>								
+								<Input 
+					            	id="idInputScholarshippayer"  
+	            					editable="false">														
+	            					<layoutData>
+										<l:GridData span="L3 M3 S12" linebreakL="false" linebreakM="false"/>
+									</layoutData>
+					            </Input>   		
+					            
+					            
+					            <Label text="{i18n>detailrequiredexperience}" width="100%" required="false">	 
+									<layoutData>
+										<l:GridData span="L3 M3 S12"/>
+									</layoutData>
+								</Label>
+								<Input 
+					            	id="idInputDetailrequiredexperience" 
+					            	type="Text" 
+				            		editable="false">
+									<layoutData>
+										<l:GridData span="L3 M3 S12"/>
+									</layoutData>
+					            </Input>     
+					            
+					           	<Label text="{i18n>typeofscholarship}" width="100%" required="false">	 
+									<layoutData>
+										<l:GridData span="L3 M3 S12" linebreakL="false" linebreakM="false"/>
+									</layoutData>
+								</Label>								
+								<Input 
+					            	id="idInputTypeofscholarship"  
+	            					editable="false">														
+	            					<layoutData>
+										<l:GridData span="L3 M3 S12" linebreakL="false" linebreakM="false"/>
+									</layoutData>
+					            </Input>   		
+					            
+					            
+					            <Label text="{i18n>otherdatainterest}" width="100%" required="false">	 
+									<layoutData>
+										<l:GridData span="L3 M3 S12"/>
+									</layoutData>
+								</Label>
+								<Input 
+					            	id="idInputOtherdatainterest" 
+					            	type="Text" 
+				            		editable="false">
+									<layoutData>
+										<l:GridData span="L3 M3 S12"/>
+									</layoutData>
+					            </Input>     
+					            
+					           	<Label text="{i18n>monthlyamountscholarship}" width="100%" required="false">	 
+									<layoutData>
+										<l:GridData span="L3 M3 S12" linebreakL="false" linebreakM="false"/>
+									</layoutData>
+								</Label>								
+								<Input 
+					            	id="idInputMonthlyamountscholarship"  
+	            					editable="false">														
+	            					<layoutData>
+										<l:GridData span="L3 M3 S12" linebreakL="false" linebreakM="false"/>
+									</layoutData>
+					            </Input>   	    
+					            
+					           	<Label text="{i18n>candidateorigin}" width="100%" required="false">	 
+									<layoutData>
+										<l:GridData span="L3 M3 S12" linebreakL="false" linebreakM="false"/>
+									</layoutData>
+								</Label>								
+								<Input 
+					            	id="idInputCandidateorigin"  
+	            					editable="false">														
+	            					<layoutData>
+										<l:GridData span="L3 M3 S12" linebreakL="false" linebreakM="false"/>
+									</layoutData>
+					            </Input>  			
+	           				</f:content>
+						</f:SimpleForm>
+					</IconTabFilter>
+					
+					<IconTabFilter
+						id="iconTabBarFilter4"
+						icon="sap-icon://hr-approval"
+						visible="{CandData}"
+						tooltip="{i18n>detailIconTabBarInfo4}">		
+						<f:SimpleForm 
+							id="formTabBarFilter4" 
+							width="auto" 
+							layout="ResponsiveGridLayout" 
+							editable="true">
+							<f:content>				
+								<Label text="{i18n>surname}" width="100%" required="false">	 
+									<layoutData>
+										<l:GridData span="L4 M4 S12"/>
+									</layoutData>
+								</Label>
+								<Input 
+					            	id="idInputSurname" 
+					            	type="Text" 
+				            		editable="false">
+									<layoutData>
+											<l:GridData span="L4 M4 S12" linebreakL="false" linebreakM="false"/>
+									</layoutData>
+					            </Input>    
+					             
+					           	<Label text="{i18n>secondsurname}" width="100%" required="false">	
+									<layoutData>
+										<l:GridData span="L4 M4 S12" linebreakL="true" linebreakM="true"/>
+									</layoutData>
+								</Label>								
+								<Input 
+					            	id="idInputSecondsurname"  
+				            		editable="false">
+									<layoutData>
+										<l:GridData span="L4 M4 S12" linebreakL="false" linebreakM="false"/>
+									</layoutData>
+					            </Input>  
+					             					            
+					           	<Label text="{i18n>name}" width="100%" required="false">	
+									<layoutData>
+										<l:GridData span="L4 M4 S12" linebreakL="true" linebreakM="true"/>
+									</layoutData>
+								</Label>	
+								<Input 
+					            	id="idInputName" 
+				            		editable="false">
+									<layoutData>
+										<l:GridData span="L4 M4 S12" linebreakL="false" linebreakM="false"/>
+									</layoutData>
+					            </Input>     
+					            
+	      				        <Label text="{i18n>dni}" width="100%" required="false">	 
+									<layoutData>
+										<l:GridData span="L4 M4 S12" linebreakL="true" linebreakM="true"/>
+									</layoutData>
+								</Label>								
+								<Input 
+					            	id="idInputDni"  
+				            		editable="false">			            		
+									<layoutData>
+										<l:GridData span="L4 M4 S12" linebreakL="false" linebreakM="false"/>
+									</layoutData>
+					            </Input>  
+					            
+	   				           	<Label text="{i18n>salaryapproved}" width="100%" required="false">	 
+									<layoutData>
+										<l:GridData span="L4 M4 S12" linebreakL="true" linebreakM="true"/>
+									</layoutData>
+								</Label>								
+								<Input 
+					            	id="idInputSalaryapproved"  
+				            		editable="false">
+									<layoutData>
+										<l:GridData span="L4 M4 S12" linebreakL="false" linebreakM="false"/>
+									</layoutData>
+					            </Input>  			            
+					           	<Label text="{i18n>approvedvarremuneration}" width="100%" required="false">	
+									<layoutData>
+										<l:GridData span="L4 M4 S12" linebreakL="true" linebreakM="true"/>
+									</layoutData>
+								</Label>	
+								<Input 
+					            	id="idInputApprovedvarremuneration" 
+				            		editable="false">
+									<layoutData>
+										<l:GridData span="L4 M4 S12" linebreakL="false" linebreakM="false"/>
+									</layoutData>
+					            </Input>     
+					            
+	      				        <Label text="{i18n>ondate}" width="100%" required="true">	 
+									<layoutData>
+										<l:GridData span="L4 M4 S12" linebreakL="true" linebreakM="true"/>
+									</layoutData>
+								</Label>								
+								<Input 
+					            	id="idInputOndate"  
+				            		editable="false">			            	
+									<layoutData>
+										<l:GridData span="L4 M4 S12" linebreakL="false" linebreakM="false"/>
+									</layoutData>
+					            </Input>  
+					            
+	   				           	<Label text="{i18n>offdate}" width="100%" required="false">	 
+									<layoutData>
+										<l:GridData span="L4 M4 S12" linebreakL="true" linebreakM="true"/>
+									</layoutData>
+								</Label>								
+								<Input 
+					            	id="idInputOffdate"  
+				            		editable="false">
+									<layoutData>
+										<l:GridData span="L4 M4 S12" linebreakL="false" linebreakM="false"/>
+									</layoutData>
+					            </Input>  	
+	           				</f:content>
+						</f:SimpleForm>
+					</IconTabFilter>
+					
+					<IconTabFilter
+						id="iconTabBarFilter5"
+						icon="sap-icon://edit"
+						visible="{Modify}"
+						tooltip="{i18n>detailIconTabBarInfo5}">
+						<f:SimpleForm 
+							id="formTabBarFilter5" 
+							width="auto" 
+							layout="ResponsiveGridLayout" 
+							editable="true">
+							<f:content>		
+	 				        	<Label text="{i18n>requestedchange}" width="100%" required="false">	 
+									<layoutData>
+										<l:GridData span="L4 M4 S12" linebreakL="true" linebreakM="true"/>
+									</layoutData>
+								</Label>								
+								<Input 
+					            	id="idInputRequestedchange"  
+				            		editable="false">			            	
+									<layoutData>
+										<l:GridData span="L4 M4 S12" linebreakL="false" linebreakM="false"/>
+									</layoutData>
+					            </Input>  
+					            
+	   				           	<Label text="{i18n>modificationoptions}" width="100%" required="false">	 
+									<layoutData>
+										<l:GridData span="L4 M4 S12" linebreakL="true" linebreakM="true"/>
+									</layoutData>
+								</Label>								
+								<Input 
+					            	id="idInputModificationoptions"  
+				            		editable="false">
+									<layoutData>
+										<l:GridData span="L4 M4 S12" linebreakL="false" linebreakM="false"/>
+									</layoutData>
+					            </Input>  	
+           				</f:content>
+					</f:SimpleForm>
+					</IconTabFilter>
+					<IconTabFilter
+						id="iconTabBarFilter6"
+						icon="sap-icon://hint"
+						visible="{Observ}"
+						tooltip="{i18n>detailIconTabBarInfo6}">
+						<TextArea placeholder="Observaciones..." growing="true" growingMaxLines="7" width="100%"/>						
+					</IconTabFilter>
+					<IconTabFilter
+						id="iconTabBarFilter7"
+						icon="sap-icon://attachment"
+						visible="{Attachment}"
+						tooltip="{i18n>detailIconTabBarInfo7}">
+						
+						<List
+							id="AttachmentList"
+							mode="MultiSelect"
+							includeItemInSelection="true">
+							<headerToolbar>
+								<Toolbar>
+									<content>
+										<Title text="Adjuntos" level="H2" />
+										<ToolbarSpacer />
+									</content>
+								</Toolbar>
+							</headerToolbar>
+							<StandardListItem
+								title="Adjunto.jpg"
+								description="" />
+							<StandardListItem
+								title="Adjunto2.png"
+								description="" />
+							<StandardListItem
+								title="CV.doc"
+								description="" />
+						</List>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+		</semantic:content>
+
+		<semantic:customFooterContent>
+			<OverflowToolbarButton icon="sap-icon://accept" text="Aprobar" press="onPressAccept"/>
+			<OverflowToolbarButton icon="sap-icon://sys-cancel" text="Rechazar" press="onPressCancel"/>
+			<OverflowToolbarButton icon="sap-icon://edit" text="Modificar" press="onPressEdit"/>
+			<OverflowToolbarButton icon="sap-icon://kpi-managing-my-area" text="Reasignar" press="onPressReasing"/>
+			<OverflowToolbarButton icon="sap-icon://decline" text="Cerrar" press="onPressClose"/>
+		</semantic:customFooterContent>
+
+	</semantic:DetailPage>
+
+</mvc:View>

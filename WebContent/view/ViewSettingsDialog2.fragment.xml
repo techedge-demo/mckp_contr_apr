@@ -1,0 +1,25 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+
+	
+	<Dialog 
+    	id="idMessageDialog2"
+    	title="Modificar"
+    	afterClose="">
+	    <content>
+		    <HBox    	
+	    		alignItems="Center"
+				justifyContent="Center">
+				<Text text="Los cambios introducidos van a provocar que se reinicie la aprobación" width="80%"/>
+		    </HBox>    	
+	    </content>
+	    
+	    <beginButton>
+        	<Button text="Aceptar" press="" />
+	    </beginButton>
+	    <endButton>
+        	<Button text="Cancelar" press="closeDialogModificar" />
+	    </endButton>
+    </Dialog>
+</core:FragmentDefinition>

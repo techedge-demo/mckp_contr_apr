@@ -1,0 +1,39 @@
+[
+	{
+		"Type" : "Contratación + selección",
+		"ReqData" : true,
+		"WorkPosition" : true,
+		"SelectData" : true,
+		"CandData" : false,
+		"Modify" : false,
+		"Observ" :  true,		
+		"Attachment" :  true
+	},{
+		"Type" : "Contratar candidato",
+		"ReqData" : true,
+		"WorkPosition" : true,
+		"SelectData" : false,
+		"CandData" : true,
+		"Modify" : false,
+		"Observ" :  true,		
+		"Attachment" :  true
+	},{
+		"Type" : "Modif. Cond. Lab.",
+		"ReqData" : true,
+		"WorkPosition" : false,
+		"SelectData" : false,
+		"CandData" : true,
+		"Modify" : true,
+		"Observ" :  true,		
+		"Attachment" :  true
+	},{
+		"Type" : "Multiflujo",
+		"ReqData" : true,
+		"WorkPosition" : true,
+		"SelectData" : true,
+		"CandData" : false,
+		"Modify" : false,
+		"Observ" :  true,		
+		"Attachment" :  true
+	}
+]
