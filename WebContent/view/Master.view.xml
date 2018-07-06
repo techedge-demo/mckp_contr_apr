@@ -79,7 +79,7 @@
 							<ObjectStatus text="{Date}"/>
 						</firstStatus>
 						<secondStatus>
-							<ObjectStatus text="{Status}" state="{Risk}"/>
+							<ObjectStatus text="{Status}"/>
 						</secondStatus>
 						
 					</ObjectListItem>

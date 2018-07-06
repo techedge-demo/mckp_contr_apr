@@ -143,6 +143,7 @@ sap.ui.define([
 					sObjectName = oObject.Name,
 					oViewModel = this.getModel("detailView");
 
+				this.control = sObjectId;
 				this.getOwnerComponent().oListSelector.selectAListItem(sPath);
 
 				oViewModel.setProperty("/shareSendEmailSubject",
@@ -311,12 +312,14 @@ sap.ui.define([
 				this.getView().byId("idInputModificationoptions").setEditable(true);						               
 			},
 			
-			setNoEditableFields : function(){ 
+			setNoEditableFields : function(control){ 
 				//ToolbarButton 
 				this.getView().byId("idAprobar").setVisible(true);
 				this.getView().byId("idRechazar").setVisible(true);
 				this.getView().byId("idModificar").setVisible(true);
-				this.getView().byId("idReasignar").setVisible(true);
+				if(this.control!=="85934" && this.control!=="91743"){
+					this.getView().byId("idReasignar").setVisible(true);
+				}
 //				this.getView().byId("idCerrar").setVisible(true);
 				this.getView().byId("idGuardar").setVisible(false);
 				this.getView().byId("idInfo").setVisible(true);
@@ -386,6 +389,25 @@ sap.ui.define([
 				});				
 			},
 			
+			onPressDeleteObser: function(){
+				sap.m.MessageToast.show('Eliminar Observación', {
+			        duration: 200
+				});				
+			},
+			
+			
+			onPressAddAdjunto : function(){
+				sap.m.MessageToast.show('Añadir Adjunto', {
+			        duration: 200
+				});				
+			},
+			
+			onPressDeleteAdjunto: function(){
+				sap.m.MessageToast.show('Eliminar Adjunto Seleccionado', {
+			        duration: 200
+				});				
+			},
+			
 			onPressInfo : function(){
 				sap.m.MessageToast.show('Solicitar información', {
 			        duration: 200
@@ -393,12 +415,22 @@ sap.ui.define([
 			},
 			
 			
+			
+			
 			closeDialogCancelSave: function(oEvent){
 				console.log("Close");
 				if(oEvent.getSource().getParent()){
 					oEvent.getSource().getParent().close();
 				}				
-			}			
+			},
+			
+			getVisibilidadSemaforo : function(Risk){
+				if(Risk=="Success"){
+					return true;
+				}else{
+					return false;					
+				}
+			}
 
 		});
 
