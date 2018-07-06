@@ -843,7 +843,7 @@
 										<Text
 											text="Autor1" />
 										<Text
-											text="Observación1" />						
+											text="El salario está un poco ajustado a como está el mercado" />						
 									</cells>
 								</ColumnListItem>
 								<ColumnListItem>
@@ -853,7 +853,7 @@
 										<Text
 											text="Autor2" />
 										<Text
-											text="Observación2" />						
+											text="Cierto, quizás se debería de aumentar para encontrar un candidato válido" />						
 									</cells>
 								</ColumnListItem>
 								
@@ -864,7 +864,7 @@
 										<Text
 											text="Autor3" />
 										<Text
-											text="Observación3 Especial" />						
+											text="Proceso reiniciado por cambio de condiciones" />						
 									</cells>
 								</ColumnListItem>
 							</items>
