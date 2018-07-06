@@ -109,7 +109,7 @@
 		"color":"#FE2E2E",
 		"ReqData" : true,
 		"WorkPosition" : true,
-		"SelectData" : true,
+		"SelectData" : false,
 		"CandData" : false,
 		"Candidate":false,
 		"Modify" : false,
