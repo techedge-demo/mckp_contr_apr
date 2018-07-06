@@ -136,6 +136,11 @@
 					"viewId": "notFound"
 				}
 			}
+		},
+		"resources": {
+			"css": [{
+				"uri": "css/styles.css"
+			}]
 		}
 	}
 }

@@ -4,22 +4,22 @@
 
 	
 	<Dialog 
-    	id="idMessageDialog2"
-    	title="Modificar"
+    	id="idMessageDialog3"
+    	title="Guardar"
     	afterClose="">
 	    <content>
 		    <HBox    	
 	    		alignItems="Center"
 				justifyContent="Center">
-				<Text text="Los cambios introducidos van a provocar que se reinicie la aprobación" width="80%"/>
+				<Text text="Se habilitarán campos para su modificación" width="80%"/>
 		    </HBox>    	
 	    </content>
 	    
 	    <beginButton>
-        	<Button text="Aceptar" press="acceptDialogModificar" />
+        	<Button text="Aceptar" press="acceptDialogAcceptSave" />
 	    </beginButton>
 	    <endButton>
-        	<Button text="Cancelar" press="closeDialogModificar" />
+        	<Button text="Cancelar" press="closeDialogCancelSave" />
 	    </endButton>
     </Dialog>
 </core:FragmentDefinition>

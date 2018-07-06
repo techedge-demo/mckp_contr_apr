@@ -63,62 +63,28 @@
 						press="onSelectionChange"
 						type="Active"
 						title="{Type}"
-						number="{ObjectID}"
-						numberUnit="{Date}">
+						number="{ObjectID}">
 		
 						<attributes>
-							<ObjectAttribute text="{Position}" />
-							<ObjectAttribute text="{Applicant}" />
+							<ObjectAttribute text="{Ceco}"/>
+							<ObjectAttribute text="{Position}"/>
+							<ObjectAttribute text="{Applicant}"/>
 						</attributes>
 						
+						<markers>
+							<ObjectMarker visibility="" type="" />
+						</markers>
+						
 						<firstStatus>
-						<ObjectStatus
-							text="{Status}" />
-					</firstStatus>
+							<ObjectStatus text="{Date}"/>
+						</firstStatus>
+						<secondStatus>
+							<ObjectStatus text="{Status}" state="{Risk}"/>
+						</secondStatus>
 						
 					</ObjectListItem>
 				</items>
 			</List>
 		</semantic:content>
-
-<!-- 		<semantic:sort> -->
-<!-- 			<semantic:SortSelect -->
-<!-- 				id="sort" -->
-<!-- 				selectedKey="{masterView>/sortBy}" -->
-<!-- 				change="onSort"> -->
-<!-- 				<core:Item -->
-<!-- 					id="masterSort1" -->
-<!-- 					key="Name" -->
-<!-- 					text="{i18n>masterSort1}"/> -->
-<!-- 				<core:Item -->
-<!-- 					id="masterSort2" -->
-<!-- 					key="UnitNumber" -->
-<!-- 					text="{i18n>masterSort2}"/> -->
-<!-- 			</semantic:SortSelect> -->
-<!-- 		</semantic:sort> -->
-
-<!-- 		<semantic:filter> -->
-<!-- 			<semantic:FilterAction -->
-<!-- 				id="filter" -->
-<!-- 				press="onOpenViewSettings" /> -->
-<!-- 		</semantic:filter> -->
-
-<!-- 		<semantic:group> -->
-<!-- 			<semantic:GroupSelect -->
-<!-- 				id="group" -->
-<!-- 				selectedKey="{masterView>/groupBy}" -->
-<!-- 				change="onGroup"> -->
-<!-- 				<core:Item -->
-<!-- 					id="masterGroupNone" -->
-<!-- 					key="None" -->
-<!-- 					text="{i18n>masterGroupNone}"/> -->
-<!-- 				<core:Item -->
-<!-- 					id="masterGroup1" -->
-<!-- 					key="UnitNumber" -->
-<!-- 					text="{i18n>masterGroup1}"/> -->
-<!-- 			</semantic:GroupSelect> -->
-<!-- 		</semantic:group> -->
-
 	</semantic:MasterPage>
-
 </mvc:View>
