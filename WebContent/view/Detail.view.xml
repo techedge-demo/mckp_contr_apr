@@ -55,8 +55,7 @@
 							layout="ResponsiveGridLayout" 
 							editable="true">
 							<f:content>
-								<Label text="{i18n>type}" width="100%" required="false"
-								       visible="{typeIncorporation}">	 
+								<Label text="{i18n>type}" width="100%" required="false">	 
 									<layoutData>
 										<l:GridData span="L4 M4 S12"/>
 									</layoutData>
@@ -69,7 +68,7 @@
 <!-- 										<l:GridData span="L4 M4 S12" linebreakL="false" linebreakM="false"/> -->
 <!-- 									</layoutData> -->
 <!-- 					            </Input>    -->
-					              	<Select id="SelectType" enabled="false" visible="{typeIncorporation}">
+					              	<Select id="SelectType" enabled="false">
 										<core:Item key="key1" text="Empleado" />
 										<core:Item key="key2" text="Becario" />
 										<core:Item key="key3" text="ETT" />
@@ -78,14 +77,15 @@
 	 									</layoutData> 
 									</Select>
 									
-								<Label text="{i18n>numberRecruitment}" width="100%" required="false">	
+								<Label text="{i18n>numberRecruitment}" width="100%" required="false"
+								       visible="{typeIncorporation}">	
 									<layoutData>
 										<l:GridData span="L4 M4 S12" linebreakL="true" linebreakM="true"/>
 									</layoutData>
 								</Label>								
 								<Input 
 					            	id="idInputNumberRecruitment"  
-				            		editable="false">
+				            		editable="false" visible="{typeIncorporation}">
 									<layoutData>
 										<l:GridData span="L4 M4 S12" linebreakL="false" linebreakM="false"/>
 									</layoutData>
