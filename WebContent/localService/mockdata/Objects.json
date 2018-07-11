@@ -29,6 +29,7 @@
 		"CandDataRetrib" :true,
 		"CandDataOnDate" :true,
 		"CandDataOffDate" :true,
+		"typeIncorporation":false,
 		"AllFieldsSelection": true
 	},
 	{
@@ -61,6 +62,7 @@
 		"CandDataRetrib" :true,
 		"CandDataOnDate" :true,
 		"CandDataOffDate" :true,
+		"typeIncorporation":false,
 		"AllFieldsSelection": false
 	},
 	{
@@ -93,6 +95,7 @@
 		"CandDataRetrib" :false,
 		"CandDataOnDate" :false,
 		"CandDataOffDate" :false,
+		"typeIncorporation":false,
 		"AllFieldsSelection": false
 	},
 	{
@@ -116,6 +119,7 @@
 		"Observ" :  true,		
 		"Attachment" :  true,
 		"bReasignar" : false,
+		"typeIncorporation":true,
 		"AllFieldsSelection": false
 	}
 ]
